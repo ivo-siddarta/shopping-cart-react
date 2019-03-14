@@ -1,5 +1,5 @@
 import React from "react";
-import Product from "./Product.jsx";
+import Product from "./Product.js";
 import ProductData from "./Data.js";
 import "./styles/cart.css";
 
