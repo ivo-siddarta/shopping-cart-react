@@ -1,16 +1,22 @@
 import React from "react";
+import Product from "./Product.jsx";
+import ProductData from "./Data.js";
 import "./styles/cart.css";
 
 class Cart extends React.Component {
-
   render() {
     return (
-        <div className="page-content">
-            <h2>Add your products here!</h2>
-        </div>
+      <div className="page-content">
+        {ProductData.products.map(product => (
+          <Product
+            productName={product.name}
+            price={product.cost}
+            limit={product.stock}
+          />
+        ))}
+      </div>
     );
   }
-
 }
 
 export default Cart;

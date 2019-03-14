@@ -3,8 +3,6 @@ import ReactDOM from "react-dom";
 
 import "./styles/styles.css";
 
-import Cart from "./Cart";
+import Cart from "./Cart.js";
 
-
-// Add the Cart component to the `#root` element below!
-// YOUR CODE HERE
+ReactDOM.render(<Cart />, document.getElementById("root"));
