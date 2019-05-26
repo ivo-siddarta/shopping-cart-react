@@ -23,25 +23,24 @@ class Cart extends React.Component {
     };
   }
 
-  function handleAddToCart(props, nameInput, priceInput) {
-  let copy = [...this.state.cartItems];
-  this.copy.forEach(item => {
-    if (item.productName === nameInput) {
-      item.count += 1;
-      this.setState({ cartItems: copy });
-    } else {
-      this.setState({
-        cartItems: this.state.cartItems.concat({
-          productName: nameInput,
-          price: priceInput,
-          count: 0
-        })
+  render() {
+    function handleAddToCart(nameInput, priceInput) {
+      let copy = [...this.state.cartItems];
+      this.copy.forEach(item => {
+        if (item.productName === nameInput) {
+          item.count += 1;
+          this.setState({ cartItems: copy });
+        } else {
+          this.setState({
+            cartItems: this.state.cartItems.concat({
+              productName: nameInput,
+              price: priceInput,
+              count: 0
+            })
+          });
+        }
       });
     }
-  });
-}
-
-  render() {
     return (
       <div className="page-content">
         {ProductData.products.map(product => (
